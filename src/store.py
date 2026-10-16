@@ -55,6 +55,20 @@ def _playbook_detail(plan: dict) -> str:
     return f"Matched {families}. Score {plan['score']}, {plan['band']}, tier {plan['tier']}."
 
 
+def _end_detail(status: str) -> str:
+    if status == "approved":
+        return "END. This round was auto-approved."
+    if status == "waiting_on_counsel":
+        return "END. This round is waiting on counsel."
+    if status == "blocked":
+        return "END. This round stopped before a decision."
+    if status == "rejected":
+        return "END. This round was rejected."
+    if status == "needs_human":
+        return "END. Parse failed."
+    return "END."
+
+
 def counterparty_id(name: str) -> str:
     cleaned = "".join(ch.lower() if ch.isalnum() else "-" for ch in name.strip())
     slug = "-".join(part for part in cleaned.split("-") if part) or "unknown"
@@ -309,6 +323,97 @@ class Store:
             conn.commit()
             return self._deal_payload(conn, deal_id)
 
+    def record_review(
+        self,
+        deal_id: int,
+        *,
+        redline: str,
+        score: int,
+        band: str,
+        tier: int,
+        turnaround_days: int,
+        status: str,
+        path: str,
+        route_reason: str,
+        injection: bool,
+        liability_cap_redline: bool,
+        needs_ceo: bool,
+    ) -> dict:
+        """Store the redline, memo, score, and route. Does not call a model."""
+        if status not in {"approved", "waiting_on_counsel", "blocked", "rejected"}:
+            raise ApiError("Review status is not a finished route.")
+        text = (redline or "").strip()
+        if not text:
+            raise ApiError("Redline text is required.")
+        with self._lock, self._connect() as conn:
+            rnd = self._latest_round(conn, deal_id)
+            if rnd["status"] != "in_review":
+                return self._deal_payload(conn, deal_id)
+            plan = json.loads(rnd["plan_json"] or "{}")
+            plan.update(
+                {
+                    "redline": text,
+                    "score": score,
+                    "band": band,
+                    "tier": tier,
+                    "turnaround_days": turnaround_days,
+                    "path": path,
+                    "route_reason": route_reason,
+                    "injection": int(injection),
+                    "liability_cap_redline": int(liability_cap_redline),
+                    "needs_ceo": int(needs_ceo),
+                    "final_status": status,
+                }
+            )
+            deal = self._deal_row(conn, deal_id)
+            memo_name = f"memo-deal-{deal_id}-round-{rnd['round_number']}.md"
+            self.memo_dir.mkdir(parents=True, exist_ok=True)
+            (self.memo_dir / memo_name).write_text(_memo_body(deal, rnd, plan), encoding="utf-8")
+            now = _now()
+            conn.execute(
+                """
+                UPDATE rounds SET
+                    status = ?, step_index = 4, plan_json = ?, score = ?, band = ?, tier = ?,
+                    turnaround_days = ?, path = ?, route_reason = ?, injection = ?,
+                    liability_cap_redline = ?, needs_ceo = ?, redline_text = ?, memo_name = ?,
+                    updated_at = ?
+                WHERE id = ?
+                """,
+                (
+                    status,
+                    json.dumps(plan),
+                    score,
+                    band,
+                    tier,
+                    turnaround_days,
+                    path,
+                    route_reason,
+                    int(injection),
+                    int(liability_cap_redline),
+                    int(needs_ceo),
+                    text,
+                    memo_name,
+                    _iso(now),
+                    rnd["id"],
+                ),
+            )
+            self._activity(conn, rnd["id"], "Redline", "Drafted a redline and a memo.", now)
+            self._traces(conn, rnd["id"], "drafting_redline", text, now, level="info")
+            if status == "approved":
+                routed = "Routed this round to approval."
+            elif status == "blocked":
+                routed = "Stopped this round before a decision."
+            elif status == "rejected":
+                routed = "Rejected this round."
+            else:
+                routed = "Left this round for a person to review."
+            self._activity(conn, rnd["id"], "Reviewer", routed, now)
+            self._traces(conn, rnd["id"], "routing", route_reason, now, level="info")
+            self._traces(conn, rnd["id"], "end", _end_detail(status), now, level="info")
+            conn.execute("UPDATE deals SET updated_at = ? WHERE id = ?", (_iso(now), deal_id))
+            conn.commit()
+            return self._deal_payload(conn, deal_id)
+
     def add_trace(self, deal_id: int, step: str, detail: str, *, level: str = "info") -> None:
         """Append one info or error line for the latest round. Does not call a model."""
         if level not in {"info", "error"}:
@@ -525,6 +630,7 @@ class Store:
             elif index == 4:
                 self._apply_final(conn, row, plan, at)
                 self._traces(conn, row["id"], "routing", plan["route_reason"], at, level="info")
+                self._traces(conn, row["id"], "end", _end_detail(plan["final_status"]), at, level="info")
         conn.execute(
             "UPDATE rounds SET step_index = ?, step_started_at = ?, updated_at = ? WHERE id = ?",
             (index, _iso(_now()), _iso(_now()), row["id"]),

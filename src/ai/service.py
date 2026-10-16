@@ -9,8 +9,10 @@ from __future__ import annotations
 
 import logging
 
+from ai.guardrails import apply_guardrails
 from ai.pipeline import FIELD_LABELS
-from ai.scoring import CATEGORY_SLUG
+from ai.review import _citations_for, draft_redline_text
+from ai.scoring import CATEGORY_SLUG, classify_clause, score_clause
 from ai.team import build_team_graph, team_input
 from records import RecordNotFound, load_playbook_section
 from store import Store
@@ -78,6 +80,7 @@ class LexopsAI:
         except Exception as exc:
             self._trace(deal_id, "extracting", f"Extraction failed. {exc}", level="error")
             self.store.record_extraction(deal_id, _error_panel([{"field": "model", "error": str(exc)}]), ok=False)
+            self._trace(deal_id, "end", "END. Extraction failed.", level="info")
             return
         if not result.get("parse_ok", True):
             self.store.record_extraction(deal_id, _error_panel(result.get("parse_errors") or []), ok=False)
@@ -87,10 +90,86 @@ class LexopsAI:
                 "Parse failed. The supervisor did not send this extract to Playbook.",
                 level="error",
             )
+            self._trace(deal_id, "end", "END. Parse failed.", level="info")
             return
         self.store.record_extraction(deal_id, _summary_panel(result.get("summary") or {}), ok=True)
         status, rows = _playbook_rows(result)
         self.store.record_playbook(deal_id, playbook=rows, playbook_status=status)
+        self.complete_review(deal_id)
+
+    def complete_review(self, deal_id: int) -> dict | None:
+        """Score the stored clause, write the redline and memo, and leave review.
+
+        Safe to call again. A round that is no longer in review is left as it is.
+        """
+        try:
+            deal = self.store.get_deal(deal_id)
+        except Exception:
+            log.exception("Deal %s is not in the database, so the review was not finished.", deal_id)
+            return None
+        rnd = deal["round"]
+        if rnd["status"] != "in_review" or not rnd.get("extracted") or not rnd.get("playbook_status") or rnd.get("redline"):
+            return None
+        text = rnd["contract_text"]
+        category = classify_clause(text)
+        risk = score_clause(text, category=category)
+        citations, retrieved = _citations_for(category)
+        draft = draft_redline_text(
+            counterparty=deal["customer"],
+            category=category,
+            score=risk.score,
+            band=risk.band,
+            citations=citations,
+        )
+        issues = [] if risk.auto_eligible else ["non-standard"]
+        decision = apply_guardrails(
+            draft=draft,
+            risk_score=risk.score,
+            risk_band=risk.band,
+            clause_category=category,
+            parse_ok=True,
+            deadline_flag=False,
+            in_playbook=risk.in_playbook and rnd.get("playbook_status") == "found",
+            auto_eligible=risk.auto_eligible and not issues,
+            citations=citations,
+            retrieved_chunk_ids=retrieved,
+            counterparty=deal["customer"],
+            user_text=text,
+        )
+        score = int(decision.risk_score)
+        needs_ceo = score < 50
+        liability = category == "liability_cap" and decision.route != "auto"
+        if decision.injection:
+            status, path = "blocked", "counsel"
+        elif decision.route == "rejected":
+            status, path = "rejected", "counsel"
+        elif needs_ceo:
+            status, path = "blocked", "counsel"
+        elif decision.route == "auto":
+            status, path = "approved", "auto"
+        else:
+            status, path = "waiting_on_counsel", "counsel"
+        if needs_ceo:
+            tier, days = 3, 5
+        elif liability or score < 85:
+            tier, days = 2, 3
+        else:
+            tier, days = 1, 2
+        reason = _route_reason(status, score=score, band=decision.risk_band, injection=decision.injection)
+        return self.store.record_review(
+            deal_id,
+            redline=decision.draft,
+            score=score,
+            band=decision.risk_band,
+            tier=tier,
+            turnaround_days=days,
+            status=status,
+            path=path,
+            route_reason=reason,
+            injection=decision.injection,
+            liability_cap_redline=liability,
+            needs_ceo=needs_ceo,
+        )
 
     def _trace(self, deal_id: int, step: str, detail: str, *, level: str) -> None:
         if level == "error":
@@ -123,6 +202,18 @@ class LexopsAI:
 
     def ceo_signoff(self, deal_id: int) -> dict:
         return self.store.ceo_signoff(deal_id)
+
+
+def _route_reason(status: str, *, score: int, band: str, injection: bool) -> str:
+    if injection:
+        return "Prompt injection was detected. Stopped before a decision."
+    if status == "approved":
+        return f"Score {score}, {band}. Standard language. Auto-approved."
+    if status == "blocked":
+        return f"Score {score}, {band}. The score is below 50. CEO sign-off is required before a decision."
+    if status == "rejected":
+        return "The draft contained a legal conclusion. Rejected."
+    return f"Score {score}, {band}. Left for counsel."
 
 
 def _error_panel(errors: list) -> dict:

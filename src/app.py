@@ -84,6 +84,10 @@ def build_app(store: Store | None = None, complete=None) -> FastAPI:
 
     @app.get("/api/deals")
     def list_deals(status: str | None = None) -> dict:
+        listed = app.state.store.list_deals(status)
+        for deal in listed["deals"]:
+            if deal["status"] == "in_review":
+                app.state.ai.complete_review(deal["id"])
         return app.state.store.list_deals(status)
 
     @app.post("/api/deals")
@@ -98,6 +102,7 @@ def build_app(store: Store | None = None, complete=None) -> FastAPI:
 
     @app.get("/api/deals/{deal_id}")
     def get_deal(deal_id: int) -> dict:
+        app.state.ai.complete_review(deal_id)
         return app.state.store.get_deal(deal_id)
 
     @app.post("/api/deals/{deal_id}/rounds")

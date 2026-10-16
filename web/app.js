@@ -484,11 +484,13 @@ const TRACE_LABELS = {
   checking_playbook: "Checking playbook",
   drafting_redline: "Drafting redline",
   routing: "Routing",
+  end: "End",
 };
 
 function tracesHtml(round) {
-  const rows = (round.traces || []).length
-    ? round.traces.map((item) => {
+  const traces = [...(round.traces || [])].reverse();
+  const rows = traces.length
+    ? traces.map((item) => {
       const level = item.level === "error" ? "error" : "info";
       return `
       <li class="${level}">
@@ -504,7 +506,7 @@ function tracesHtml(round) {
     <div class="modal" id="traces-modal">
       <div class="sheet traces-sheet">
         <h2>Traces · Round ${esc(round.round_number)}</h2>
-        <p class="quiet">Info and errors from the start of this round through the latest step.</p>
+        <p class="quiet">Latest first.</p>
         <ul class="traces">${rows}</ul>
         <div class="form-actions">
           <button type="button" class="btn" id="close-traces">Close</button>
@@ -521,10 +523,19 @@ function roundNote(round) {
   if (round.status === "needs_human") {
     return "Extraction failed. The supervisor did not send this deal to Playbook.";
   }
-  if (round.playbook_status) {
+  if (round.status === "approved") {
+    return "Standard language. This round was auto-approved.";
+  }
+  if (round.status === "waiting_on_counsel") {
+    return "The redline is ready. This round is waiting on counsel.";
+  }
+  if (round.status === "blocked") {
+    return "This round stopped before a decision.";
+  }
+  if (round.playbook_status && !round.redline) {
     return "The supervisor sent this extract to Playbook.";
   }
-  return "Extraction ran on the pasted text for this round. Playbook, redline, and routing still wait for later milestones.";
+  return "Extraction ran on the pasted text for this round.";
 }
 
 function stepsHtml(steps) {
