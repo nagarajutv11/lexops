@@ -1,0 +1,70 @@
+{
+  "domain": "LexOps -- Contract Intelligence & Compliance Copilot",
+  "toolkit_version": "1.0.2",
+  "complete": true,
+  "generated_at": "2026-09-25T15:07:22.342255+00:00",
+  "seed": 42,
+  "generator": {
+    "provider": "gemini",
+    "model": "gemini-flash-latest"
+  },
+  "assets": {
+    "corpus": {
+      "count": 19,
+      "index": "corpus/index.json"
+    },
+    "intake": {
+      "count": 200,
+      "path": "intake/records.jsonl",
+      "llm_calls": 11
+    },
+    "mock_api": {
+      "tables": {
+        "counterparties": 120,
+        "contracts": 260,
+        "signature_requests": 80
+      },
+      "dir": "mock_api/"
+    },
+    "eval": {
+      "count": 20,
+      "by_category": {
+        "guardrail": 2,
+        "injection": 1,
+        "multi_hop": 5,
+        "unanswerable": 4,
+        "factual": 8
+      },
+      "path": "eval/golden_set.json"
+    }
+  },
+  "public_sources_referenced": [
+    {
+      "name": "CUAD v1 (The Atticus Project)",
+      "url": "https://www.atticusprojectai.org/cuad",
+      "use": "510 real commercial contracts, 41 clause categories, 13,000+ expert annotations -- primary contract corpus",
+      "licence": "CC BY 4.0"
+    },
+    {
+      "name": "SEC EDGAR full-text search (EX-10 material contracts)",
+      "url": "https://efts.sec.gov/LATEST/search-index?q=&forms=8-K",
+      "use": "Unlimited additional real contracts beyond CUAD",
+      "licence": "US Government work, public domain"
+    },
+    {
+      "name": "ContractNLI",
+      "url": "https://stanfordnlp.github.io/contract-nli/",
+      "use": "NDA entailment pairs for guardrail evaluation",
+      "licence": "CC BY 4.0"
+    },
+    {
+      "name": "LEDGAR / LexGLUE",
+      "url": "https://huggingface.co/datasets/lex_glue",
+      "use": "60k+ labelled contract provisions for clause classification",
+      "licence": "CC BY-NC-SA 4.0 (non-commercial)"
+    }
+  ],
+  "synthetic": true,
+  "contains_real_personal_data": false,
+  "notice": "All records in this corpus are synthetic. Any resemblance to a real person, company, contract, or patient is coincidental. Public datasets listed under public_sources_referenced were used for schema and distribution grounding only; consult each source's own licence before redistributing anything derived from it."
+}

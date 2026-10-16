@@ -1,0 +1,121 @@
+counterparty_id,legal_name,jurisdiction,relationship,negotiation_rounds_to_date,historical_posture
+NW-CP-0000,"Evans Holdings, Inc.",Singapore,customer,4,standard
+NW-CP-0001,"Chapman Partners, Inc.",Delaware,customer,1,aggressive
+NW-CP-0002,"Patterson Systems, Inc.",Karnataka,customer,3,aggressive
+NW-CP-0003,"Carroll Holdings, Inc.",Singapore,customer,4,standard
+NW-CP-0004,"Brown Holdings, Inc.",England and Wales,vendor,4,standard
+NW-CP-0005,"Choi Partners, Inc.",England and Wales,vendor,2,standard
+NW-CP-0006,"Garcia Technologies, Inc.",England and Wales,reseller,4,standard
+NW-CP-0007,"Farmer Labs, Inc.",England and Wales,customer,3,accommodating
+NW-CP-0008,"Garrett Partners, Inc.",Singapore,reseller,6,standard
+NW-CP-0009,"Baker Systems, Inc.",Singapore,customer,6,standard
+NW-CP-0010,"Miller Holdings, Inc.",Delaware,customer,4,aggressive
+NW-CP-0011,"Allen Technologies, Inc.",Karnataka,customer,1,standard
+NW-CP-0012,"Arnold Systems, Inc.",Delaware,customer,6,standard
+NW-CP-0013,"Moore Holdings, Inc.",Karnataka,reseller,0,standard
+NW-CP-0014,"Ortiz Partners, Inc.",England and Wales,reseller,6,standard
+NW-CP-0015,"Norris Partners, Inc.",Delaware,vendor,5,aggressive
+NW-CP-0016,"Harrison Labs, Inc.",Singapore,vendor,6,standard
+NW-CP-0017,"Johnson Technologies, Inc.",Singapore,vendor,3,accommodating
+NW-CP-0018,"Roberts Systems, Inc.",England and Wales,customer,6,standard
+NW-CP-0019,"Campbell Systems, Inc.",England and Wales,customer,1,standard
+NW-CP-0020,"Heath Holdings, Inc.",Karnataka,customer,4,standard
+NW-CP-0021,"Jones Labs, Inc.",Karnataka,vendor,3,accommodating
+NW-CP-0022,"Hall Systems, Inc.",Delaware,customer,6,standard
+NW-CP-0023,"Baker Partners, Inc.",Delaware,customer,6,aggressive
+NW-CP-0024,"Moody Labs, Inc.",Delaware,reseller,1,aggressive
+NW-CP-0025,"Lawrence Technologies, Inc.",Delaware,reseller,2,accommodating
+NW-CP-0026,"Lara Labs, Inc.",Delaware,vendor,6,standard
+NW-CP-0027,"Gonzalez Partners, Inc.",England and Wales,customer,3,accommodating
+NW-CP-0028,"Wilson Labs, Inc.",Delaware,customer,0,aggressive
+NW-CP-0029,"Walker Labs, Inc.",England and Wales,customer,6,standard
+NW-CP-0030,"Hernandez Systems, Inc.",Singapore,customer,0,aggressive
+NW-CP-0031,"Baker Labs, Inc.",Karnataka,customer,0,aggressive
+NW-CP-0032,"Thomas Holdings, Inc.",Delaware,customer,3,accommodating
+NW-CP-0033,"Brown Partners, Inc.",Karnataka,reseller,3,standard
+NW-CP-0034,"Sparks Technologies, Inc.",Karnataka,customer,2,accommodating
+NW-CP-0035,"Larson Labs, Inc.",Singapore,vendor,3,aggressive
+NW-CP-0036,"Holloway Systems, Inc.",England and Wales,reseller,2,standard
+NW-CP-0037,"Morse Partners, Inc.",Karnataka,customer,0,accommodating
+NW-CP-0038,"Gonzales Labs, Inc.",Karnataka,customer,5,aggressive
+NW-CP-0039,"Harrison Partners, Inc.",England and Wales,reseller,6,standard
+NW-CP-0040,"Torres Systems, Inc.",Karnataka,reseller,2,standard
+NW-CP-0041,"Powell Technologies, Inc.",Singapore,reseller,4,standard
+NW-CP-0042,"Nelson Holdings, Inc.",England and Wales,customer,2,standard
+NW-CP-0043,"Fernandez Systems, Inc.",Singapore,customer,6,aggressive
+NW-CP-0044,"Kim Partners, Inc.",Singapore,reseller,1,aggressive
+NW-CP-0045,"George Systems, Inc.",England and Wales,reseller,1,accommodating
+NW-CP-0046,"Preston Systems, Inc.",England and Wales,reseller,6,aggressive
+NW-CP-0047,"Navarro Technologies, Inc.",Singapore,customer,1,accommodating
+NW-CP-0048,"Munoz Holdings, Inc.",Singapore,reseller,0,standard
+NW-CP-0049,"Johnson Holdings, Inc.",England and Wales,reseller,1,aggressive
+NW-CP-0050,"Perez Technologies, Inc.",Singapore,customer,3,accommodating
+NW-CP-0051,"Craig Systems, Inc.",England and Wales,reseller,1,accommodating
+NW-CP-0052,"Valencia Technologies, Inc.",Delaware,vendor,4,accommodating
+NW-CP-0053,"Matthews Labs, Inc.",Singapore,reseller,1,aggressive
+NW-CP-0054,"Smith Holdings, Inc.",Delaware,customer,1,standard
+NW-CP-0055,"Hubbard Labs, Inc.",Delaware,reseller,6,standard
+NW-CP-0056,"Underwood Systems, Inc.",Singapore,reseller,5,standard
+NW-CP-0057,"Johnston Systems, Inc.",Singapore,vendor,2,accommodating
+NW-CP-0058,"Hines Labs, Inc.",Karnataka,reseller,3,standard
+NW-CP-0059,"Thompson Labs, Inc.",Singapore,customer,5,standard
+NW-CP-0060,"Stone Labs, Inc.",Karnataka,vendor,5,standard
+NW-CP-0061,"Ramos Labs, Inc.",England and Wales,reseller,0,aggressive
+NW-CP-0062,"Ramirez Partners, Inc.",Karnataka,reseller,0,accommodating
+NW-CP-0063,"Shea Holdings, Inc.",England and Wales,reseller,4,accommodating
+NW-CP-0064,"Graham Technologies, Inc.",England and Wales,vendor,5,accommodating
+NW-CP-0065,"Olsen Holdings, Inc.",Singapore,customer,5,aggressive
+NW-CP-0066,"Costa Systems, Inc.",Singapore,vendor,0,accommodating
+NW-CP-0067,"Harrison Labs, Inc.",Delaware,vendor,2,standard
+NW-CP-0068,"Ortiz Systems, Inc.",Delaware,vendor,3,standard
+NW-CP-0069,"Morris Labs, Inc.",Karnataka,vendor,3,standard
+NW-CP-0070,"Garcia Technologies, Inc.",Delaware,vendor,6,aggressive
+NW-CP-0071,"Martin Labs, Inc.",England and Wales,vendor,0,standard
+NW-CP-0072,"Jenkins Systems, Inc.",Singapore,customer,2,accommodating
+NW-CP-0073,"Simpson Systems, Inc.",Delaware,vendor,1,aggressive
+NW-CP-0074,"Bates Labs, Inc.",Delaware,reseller,0,standard
+NW-CP-0075,"Morales Partners, Inc.",Karnataka,reseller,0,standard
+NW-CP-0076,"Hodges Labs, Inc.",Karnataka,customer,0,accommodating
+NW-CP-0077,"Johnson Labs, Inc.",England and Wales,vendor,5,standard
+NW-CP-0078,"Miller Partners, Inc.",Singapore,reseller,2,accommodating
+NW-CP-0079,"King Systems, Inc.",Delaware,vendor,4,standard
+NW-CP-0080,"Wilson Technologies, Inc.",England and Wales,customer,2,accommodating
+NW-CP-0081,"Barton Systems, Inc.",Singapore,reseller,5,standard
+NW-CP-0082,"Hancock Labs, Inc.",Delaware,customer,1,accommodating
+NW-CP-0083,"Bryan Holdings, Inc.",Delaware,vendor,6,accommodating
+NW-CP-0084,"Smith Technologies, Inc.",Karnataka,vendor,5,accommodating
+NW-CP-0085,"Booth Partners, Inc.",Karnataka,customer,2,aggressive
+NW-CP-0086,"Murray Holdings, Inc.",England and Wales,vendor,0,accommodating
+NW-CP-0087,"Brown Technologies, Inc.",Singapore,customer,6,accommodating
+NW-CP-0088,"Stone Systems, Inc.",England and Wales,reseller,5,accommodating
+NW-CP-0089,"Dean Holdings, Inc.",Karnataka,reseller,1,standard
+NW-CP-0090,"Jimenez Technologies, Inc.",Karnataka,reseller,5,aggressive
+NW-CP-0091,"Ramos Technologies, Inc.",England and Wales,vendor,2,accommodating
+NW-CP-0092,"Williams Systems, Inc.",England and Wales,customer,6,standard
+NW-CP-0093,"Adams Labs, Inc.",England and Wales,customer,1,accommodating
+NW-CP-0094,"Anderson Systems, Inc.",Karnataka,customer,6,standard
+NW-CP-0095,"Roberts Partners, Inc.",Singapore,vendor,5,aggressive
+NW-CP-0096,"Gilmore Systems, Inc.",Delaware,vendor,4,standard
+NW-CP-0097,"Washington Holdings, Inc.",Singapore,reseller,3,aggressive
+NW-CP-0098,"Johnson Systems, Inc.",Karnataka,customer,3,accommodating
+NW-CP-0099,"Mccoy Partners, Inc.",Delaware,customer,4,standard
+NW-CP-0100,"Lloyd Holdings, Inc.",Singapore,vendor,2,standard
+NW-CP-0101,"Mckinney Technologies, Inc.",Karnataka,customer,1,accommodating
+NW-CP-0102,"Collins Labs, Inc.",Karnataka,customer,3,aggressive
+NW-CP-0103,"Smith Holdings, Inc.",England and Wales,customer,5,standard
+NW-CP-0104,"Russell Holdings, Inc.",Singapore,customer,2,aggressive
+NW-CP-0105,"Walker Holdings, Inc.",Singapore,vendor,6,standard
+NW-CP-0106,"Skinner Systems, Inc.",England and Wales,customer,2,aggressive
+NW-CP-0107,"Wilson Technologies, Inc.",Singapore,vendor,5,standard
+NW-CP-0108,"Valentine Systems, Inc.",England and Wales,vendor,1,aggressive
+NW-CP-0109,"Holland Technologies, Inc.",Karnataka,reseller,6,standard
+NW-CP-0110,"Moore Systems, Inc.",England and Wales,customer,2,standard
+NW-CP-0111,"Cantu Technologies, Inc.",England and Wales,reseller,4,accommodating
+NW-CP-0112,"Carter Labs, Inc.",England and Wales,customer,1,accommodating
+NW-CP-0113,"Thornton Systems, Inc.",Singapore,reseller,1,accommodating
+NW-CP-0114,"Perry Technologies, Inc.",Karnataka,reseller,0,standard
+NW-CP-0115,"Olson Labs, Inc.",Singapore,vendor,4,standard
+NW-CP-0116,"Kennedy Technologies, Inc.",Singapore,vendor,1,aggressive
+NW-CP-0117,"Bryant Holdings, Inc.",Delaware,vendor,0,standard
+NW-CP-0118,"Thomas Labs, Inc.",England and Wales,customer,5,accommodating
+NW-CP-0119,"Lee Labs, Inc.",Singapore,reseller,3,standard

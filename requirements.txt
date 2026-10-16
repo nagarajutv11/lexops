@@ -1,0 +1,15 @@
+pydantic>=2.0
+pytest>=8.0
+fastapi>=0.115
+uvicorn>=0.32
+httpx>=0.27
+litellm>=1.50
+qdrant-client>=1.12
+langchain-google-genai>=2.0
+rank-bm25>=0.2.2
+sentence-transformers>=3.0
+langgraph>=1.0
+langgraph-checkpoint-sqlite>=2.0
+langchain-core>=0.3
+fastmcp>=2.0
+langfuse>=2.0

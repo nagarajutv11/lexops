@@ -1,0 +1,12 @@
+[project]
+name = "lexops"
+version = "0.1.0"
+description = "Contract intelligence and compliance copilot"
+requires-python = ">=3.11"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

@@ -1,0 +1,962 @@
+[
+  {
+    "counterparty_id": "NW-CP-0000",
+    "legal_name": "Evans Holdings, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 4,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0001",
+    "legal_name": "Chapman Partners, Inc.",
+    "jurisdiction": "Delaware",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 1,
+    "historical_posture": "aggressive"
+  },
+  {
+    "counterparty_id": "NW-CP-0002",
+    "legal_name": "Patterson Systems, Inc.",
+    "jurisdiction": "Karnataka",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 3,
+    "historical_posture": "aggressive"
+  },
+  {
+    "counterparty_id": "NW-CP-0003",
+    "legal_name": "Carroll Holdings, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 4,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0004",
+    "legal_name": "Brown Holdings, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 4,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0005",
+    "legal_name": "Choi Partners, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 2,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0006",
+    "legal_name": "Garcia Technologies, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 4,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0007",
+    "legal_name": "Farmer Labs, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 3,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0008",
+    "legal_name": "Garrett Partners, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 6,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0009",
+    "legal_name": "Baker Systems, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 6,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0010",
+    "legal_name": "Miller Holdings, Inc.",
+    "jurisdiction": "Delaware",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 4,
+    "historical_posture": "aggressive"
+  },
+  {
+    "counterparty_id": "NW-CP-0011",
+    "legal_name": "Allen Technologies, Inc.",
+    "jurisdiction": "Karnataka",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 1,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0012",
+    "legal_name": "Arnold Systems, Inc.",
+    "jurisdiction": "Delaware",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 6,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0013",
+    "legal_name": "Moore Holdings, Inc.",
+    "jurisdiction": "Karnataka",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 0,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0014",
+    "legal_name": "Ortiz Partners, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 6,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0015",
+    "legal_name": "Norris Partners, Inc.",
+    "jurisdiction": "Delaware",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 5,
+    "historical_posture": "aggressive"
+  },
+  {
+    "counterparty_id": "NW-CP-0016",
+    "legal_name": "Harrison Labs, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 6,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0017",
+    "legal_name": "Johnson Technologies, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 3,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0018",
+    "legal_name": "Roberts Systems, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 6,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0019",
+    "legal_name": "Campbell Systems, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 1,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0020",
+    "legal_name": "Heath Holdings, Inc.",
+    "jurisdiction": "Karnataka",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 4,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0021",
+    "legal_name": "Jones Labs, Inc.",
+    "jurisdiction": "Karnataka",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 3,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0022",
+    "legal_name": "Hall Systems, Inc.",
+    "jurisdiction": "Delaware",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 6,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0023",
+    "legal_name": "Baker Partners, Inc.",
+    "jurisdiction": "Delaware",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 6,
+    "historical_posture": "aggressive"
+  },
+  {
+    "counterparty_id": "NW-CP-0024",
+    "legal_name": "Moody Labs, Inc.",
+    "jurisdiction": "Delaware",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 1,
+    "historical_posture": "aggressive"
+  },
+  {
+    "counterparty_id": "NW-CP-0025",
+    "legal_name": "Lawrence Technologies, Inc.",
+    "jurisdiction": "Delaware",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 2,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0026",
+    "legal_name": "Lara Labs, Inc.",
+    "jurisdiction": "Delaware",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 6,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0027",
+    "legal_name": "Gonzalez Partners, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 3,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0028",
+    "legal_name": "Wilson Labs, Inc.",
+    "jurisdiction": "Delaware",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 0,
+    "historical_posture": "aggressive"
+  },
+  {
+    "counterparty_id": "NW-CP-0029",
+    "legal_name": "Walker Labs, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 6,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0030",
+    "legal_name": "Hernandez Systems, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 0,
+    "historical_posture": "aggressive"
+  },
+  {
+    "counterparty_id": "NW-CP-0031",
+    "legal_name": "Baker Labs, Inc.",
+    "jurisdiction": "Karnataka",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 0,
+    "historical_posture": "aggressive"
+  },
+  {
+    "counterparty_id": "NW-CP-0032",
+    "legal_name": "Thomas Holdings, Inc.",
+    "jurisdiction": "Delaware",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 3,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0033",
+    "legal_name": "Brown Partners, Inc.",
+    "jurisdiction": "Karnataka",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 3,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0034",
+    "legal_name": "Sparks Technologies, Inc.",
+    "jurisdiction": "Karnataka",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 2,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0035",
+    "legal_name": "Larson Labs, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 3,
+    "historical_posture": "aggressive"
+  },
+  {
+    "counterparty_id": "NW-CP-0036",
+    "legal_name": "Holloway Systems, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 2,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0037",
+    "legal_name": "Morse Partners, Inc.",
+    "jurisdiction": "Karnataka",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 0,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0038",
+    "legal_name": "Gonzales Labs, Inc.",
+    "jurisdiction": "Karnataka",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 5,
+    "historical_posture": "aggressive"
+  },
+  {
+    "counterparty_id": "NW-CP-0039",
+    "legal_name": "Harrison Partners, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 6,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0040",
+    "legal_name": "Torres Systems, Inc.",
+    "jurisdiction": "Karnataka",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 2,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0041",
+    "legal_name": "Powell Technologies, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 4,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0042",
+    "legal_name": "Nelson Holdings, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 2,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0043",
+    "legal_name": "Fernandez Systems, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 6,
+    "historical_posture": "aggressive"
+  },
+  {
+    "counterparty_id": "NW-CP-0044",
+    "legal_name": "Kim Partners, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 1,
+    "historical_posture": "aggressive"
+  },
+  {
+    "counterparty_id": "NW-CP-0045",
+    "legal_name": "George Systems, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 1,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0046",
+    "legal_name": "Preston Systems, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 6,
+    "historical_posture": "aggressive"
+  },
+  {
+    "counterparty_id": "NW-CP-0047",
+    "legal_name": "Navarro Technologies, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 1,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0048",
+    "legal_name": "Munoz Holdings, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 0,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0049",
+    "legal_name": "Johnson Holdings, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 1,
+    "historical_posture": "aggressive"
+  },
+  {
+    "counterparty_id": "NW-CP-0050",
+    "legal_name": "Perez Technologies, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 3,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0051",
+    "legal_name": "Craig Systems, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 1,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0052",
+    "legal_name": "Valencia Technologies, Inc.",
+    "jurisdiction": "Delaware",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 4,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0053",
+    "legal_name": "Matthews Labs, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 1,
+    "historical_posture": "aggressive"
+  },
+  {
+    "counterparty_id": "NW-CP-0054",
+    "legal_name": "Smith Holdings, Inc.",
+    "jurisdiction": "Delaware",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 1,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0055",
+    "legal_name": "Hubbard Labs, Inc.",
+    "jurisdiction": "Delaware",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 6,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0056",
+    "legal_name": "Underwood Systems, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 5,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0057",
+    "legal_name": "Johnston Systems, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 2,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0058",
+    "legal_name": "Hines Labs, Inc.",
+    "jurisdiction": "Karnataka",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 3,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0059",
+    "legal_name": "Thompson Labs, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 5,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0060",
+    "legal_name": "Stone Labs, Inc.",
+    "jurisdiction": "Karnataka",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 5,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0061",
+    "legal_name": "Ramos Labs, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 0,
+    "historical_posture": "aggressive"
+  },
+  {
+    "counterparty_id": "NW-CP-0062",
+    "legal_name": "Ramirez Partners, Inc.",
+    "jurisdiction": "Karnataka",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 0,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0063",
+    "legal_name": "Shea Holdings, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 4,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0064",
+    "legal_name": "Graham Technologies, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 5,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0065",
+    "legal_name": "Olsen Holdings, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 5,
+    "historical_posture": "aggressive"
+  },
+  {
+    "counterparty_id": "NW-CP-0066",
+    "legal_name": "Costa Systems, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 0,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0067",
+    "legal_name": "Harrison Labs, Inc.",
+    "jurisdiction": "Delaware",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 2,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0068",
+    "legal_name": "Ortiz Systems, Inc.",
+    "jurisdiction": "Delaware",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 3,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0069",
+    "legal_name": "Morris Labs, Inc.",
+    "jurisdiction": "Karnataka",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 3,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0070",
+    "legal_name": "Garcia Technologies, Inc.",
+    "jurisdiction": "Delaware",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 6,
+    "historical_posture": "aggressive"
+  },
+  {
+    "counterparty_id": "NW-CP-0071",
+    "legal_name": "Martin Labs, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 0,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0072",
+    "legal_name": "Jenkins Systems, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 2,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0073",
+    "legal_name": "Simpson Systems, Inc.",
+    "jurisdiction": "Delaware",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 1,
+    "historical_posture": "aggressive"
+  },
+  {
+    "counterparty_id": "NW-CP-0074",
+    "legal_name": "Bates Labs, Inc.",
+    "jurisdiction": "Delaware",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 0,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0075",
+    "legal_name": "Morales Partners, Inc.",
+    "jurisdiction": "Karnataka",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 0,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0076",
+    "legal_name": "Hodges Labs, Inc.",
+    "jurisdiction": "Karnataka",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 0,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0077",
+    "legal_name": "Johnson Labs, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 5,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0078",
+    "legal_name": "Miller Partners, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 2,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0079",
+    "legal_name": "King Systems, Inc.",
+    "jurisdiction": "Delaware",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 4,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0080",
+    "legal_name": "Wilson Technologies, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 2,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0081",
+    "legal_name": "Barton Systems, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 5,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0082",
+    "legal_name": "Hancock Labs, Inc.",
+    "jurisdiction": "Delaware",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 1,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0083",
+    "legal_name": "Bryan Holdings, Inc.",
+    "jurisdiction": "Delaware",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 6,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0084",
+    "legal_name": "Smith Technologies, Inc.",
+    "jurisdiction": "Karnataka",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 5,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0085",
+    "legal_name": "Booth Partners, Inc.",
+    "jurisdiction": "Karnataka",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 2,
+    "historical_posture": "aggressive"
+  },
+  {
+    "counterparty_id": "NW-CP-0086",
+    "legal_name": "Murray Holdings, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 0,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0087",
+    "legal_name": "Brown Technologies, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 6,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0088",
+    "legal_name": "Stone Systems, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 5,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0089",
+    "legal_name": "Dean Holdings, Inc.",
+    "jurisdiction": "Karnataka",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 1,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0090",
+    "legal_name": "Jimenez Technologies, Inc.",
+    "jurisdiction": "Karnataka",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 5,
+    "historical_posture": "aggressive"
+  },
+  {
+    "counterparty_id": "NW-CP-0091",
+    "legal_name": "Ramos Technologies, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 2,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0092",
+    "legal_name": "Williams Systems, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 6,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0093",
+    "legal_name": "Adams Labs, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 1,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0094",
+    "legal_name": "Anderson Systems, Inc.",
+    "jurisdiction": "Karnataka",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 6,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0095",
+    "legal_name": "Roberts Partners, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 5,
+    "historical_posture": "aggressive"
+  },
+  {
+    "counterparty_id": "NW-CP-0096",
+    "legal_name": "Gilmore Systems, Inc.",
+    "jurisdiction": "Delaware",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 4,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0097",
+    "legal_name": "Washington Holdings, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 3,
+    "historical_posture": "aggressive"
+  },
+  {
+    "counterparty_id": "NW-CP-0098",
+    "legal_name": "Johnson Systems, Inc.",
+    "jurisdiction": "Karnataka",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 3,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0099",
+    "legal_name": "Mccoy Partners, Inc.",
+    "jurisdiction": "Delaware",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 4,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0100",
+    "legal_name": "Lloyd Holdings, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 2,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0101",
+    "legal_name": "Mckinney Technologies, Inc.",
+    "jurisdiction": "Karnataka",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 1,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0102",
+    "legal_name": "Collins Labs, Inc.",
+    "jurisdiction": "Karnataka",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 3,
+    "historical_posture": "aggressive"
+  },
+  {
+    "counterparty_id": "NW-CP-0103",
+    "legal_name": "Smith Holdings, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 5,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0104",
+    "legal_name": "Russell Holdings, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 2,
+    "historical_posture": "aggressive"
+  },
+  {
+    "counterparty_id": "NW-CP-0105",
+    "legal_name": "Walker Holdings, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 6,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0106",
+    "legal_name": "Skinner Systems, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 2,
+    "historical_posture": "aggressive"
+  },
+  {
+    "counterparty_id": "NW-CP-0107",
+    "legal_name": "Wilson Technologies, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 5,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0108",
+    "legal_name": "Valentine Systems, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 1,
+    "historical_posture": "aggressive"
+  },
+  {
+    "counterparty_id": "NW-CP-0109",
+    "legal_name": "Holland Technologies, Inc.",
+    "jurisdiction": "Karnataka",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 6,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0110",
+    "legal_name": "Moore Systems, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 2,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0111",
+    "legal_name": "Cantu Technologies, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 4,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0112",
+    "legal_name": "Carter Labs, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 1,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0113",
+    "legal_name": "Thornton Systems, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 1,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0114",
+    "legal_name": "Perry Technologies, Inc.",
+    "jurisdiction": "Karnataka",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 0,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0115",
+    "legal_name": "Olson Labs, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 4,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0116",
+    "legal_name": "Kennedy Technologies, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 1,
+    "historical_posture": "aggressive"
+  },
+  {
+    "counterparty_id": "NW-CP-0117",
+    "legal_name": "Bryant Holdings, Inc.",
+    "jurisdiction": "Delaware",
+    "relationship": "vendor",
+    "negotiation_rounds_to_date": 0,
+    "historical_posture": "standard"
+  },
+  {
+    "counterparty_id": "NW-CP-0118",
+    "legal_name": "Thomas Labs, Inc.",
+    "jurisdiction": "England and Wales",
+    "relationship": "customer",
+    "negotiation_rounds_to_date": 5,
+    "historical_posture": "accommodating"
+  },
+  {
+    "counterparty_id": "NW-CP-0119",
+    "legal_name": "Lee Labs, Inc.",
+    "jurisdiction": "Singapore",
+    "relationship": "reseller",
+    "negotiation_rounds_to_date": 3,
+    "historical_posture": "standard"
+  }
+]
