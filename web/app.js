@@ -617,6 +617,64 @@ function extractionHtml(round) {
   `;
 }
 
+function cleanHeading(line) {
+  let text = String(line).trim().replace(/^#{1,6}\s*/, "");
+  if (text.startsWith("**") && text.endsWith("**") && text.length > 4) {
+    text = text.slice(2, -2).trim();
+  }
+  return text.trim();
+}
+
+function isLaterChunkHeading(line) {
+  const raw = line.trim();
+  if (!raw || /^-{3,}$/.test(raw) || raw === "***") return false;
+  if (/^#{1,6}\s+\S/.test(raw)) return true;
+  if (/^\*\*[^*].+\*\*$/.test(raw) && raw.length <= 160) return true;
+  if (/^\d+(?:\.\d+)+\.?\s+\S/.test(raw) && raw.length <= 120) return true;
+  if (/^[*]/.test(raw) || /^>/.test(raw) || /^[-+]\s/.test(raw) || /^\d+[.)]\s/.test(raw)) return false;
+  if (raw.length > 120 || /[.!?;:]$/.test(raw) || raw.split(/\s+/).length < 2) return false;
+  return true;
+}
+
+function positionHeadings(value) {
+  const headings = [];
+  let started = false;
+  let afterBreak = true;
+  for (const raw of String(value ?? "").split("\n")) {
+    const trimmed = raw.trim();
+    if (!trimmed || /^-{3,}$/.test(trimmed) || trimmed === "***") {
+      afterBreak = true;
+      continue;
+    }
+    if (!started) {
+      const heading = cleanHeading(trimmed);
+      if (heading) headings.push(heading);
+      started = true;
+      afterBreak = false;
+      continue;
+    }
+    if (afterBreak && isLaterChunkHeading(trimmed)) {
+      const heading = cleanHeading(trimmed);
+      if (heading) headings.push(heading);
+    }
+    afterBreak = false;
+  }
+  return headings;
+}
+
+function positionRow(label, text) {
+  const headings = positionHeadings(text);
+  if (!headings.length) {
+    return `<div class="position"><span class="position-label">${esc(label)}</span></div>`;
+  }
+  return headings.map((heading) => `
+    <div class="position">
+      <span class="position-label">${esc(label)}</span>
+      <span class="position-heading">${esc(heading)}</span>
+    </div>
+  `).join("");
+}
+
 function workHtml(deal, round) {
   return `
     <section class="card panel">
@@ -629,9 +687,9 @@ function workHtml(deal, round) {
       ${round.playbook.length ? round.playbook.map((item) => `
         <div class="family">
           <h3>${esc(item.family)}</h3>
-          <p><strong>Preferred.</strong> ${esc(item.preferred)}</p>
-          <p><strong>Fallback.</strong> ${esc(item.fallback)}</p>
-          <p><strong>Walk-away.</strong> ${esc(item.walk_away)}</p>
+          ${positionRow("Preferred", item.preferred)}
+          ${positionRow("Fallback", item.fallback)}
+          ${positionRow("Walk-away", item.walk_away)}
           <span class="cite">${esc(item.citation_title)} · ${esc(item.chunk_id)}</span>
         </div>
       `).join("") : `<p class="quiet">${round.playbook_status === "not_in_playbook" ? "Not in the playbook." : "Waiting for the playbook match."}</p>`}

@@ -138,10 +138,25 @@ tr.clickable:hover { background: #faf6ee; }
   border-radius: 10px;
 }
 input[type="file"] { font-size: 13px; }
-.family { padding: 10px 0; border-top: 1px solid var(--line); }
-.family h3 { margin: 0 0 6px; font-size: 14px; }
-.family p { margin: 2px 0; font-size: 13px; }
-.cite { display: inline-block; margin-top: 6px; background: var(--green-soft); color: var(--green); border-radius: 999px; padding: 2px 8px; font-size: 12px; }
+.family { padding: 10px 0 12px; border-top: 1px solid var(--line); }
+.family h3 { margin: 0 0 2px; font-size: 14px; }
+.position {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 8px;
+  align-items: baseline;
+  padding: 8px 0;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+}
+.position-label {
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.position-heading { font-weight: 650; }
+.cite { display: inline-block; margin-top: 8px; background: var(--green-soft); color: var(--green); border-radius: 999px; padding: 2px 8px; font-size: 12px; }
 .activity { list-style: none; margin: 0; padding: 0; }
 .activity li { padding: 8px 0; border-top: 1px solid var(--line); font-size: 13px; }
 .activity time { display: block; color: var(--muted); font-size: 12px; }

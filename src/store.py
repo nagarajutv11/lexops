@@ -50,6 +50,33 @@ def _extraction_detail(plan: dict) -> str:
     return f"Read {', '.join(read)}."
 
 
+def _position_heading(text: str) -> str:
+    """The section title only. The clause body stays in the playbook files."""
+    for line in str(text or "").splitlines():
+        cleaned = line.strip()
+        if not cleaned or cleaned.strip("-") == "" or cleaned == "***":
+            continue
+        cleaned = cleaned.lstrip("#").strip()
+        if cleaned.startswith("**") and cleaned.endswith("**") and len(cleaned) > 4:
+            cleaned = cleaned[2:-2].strip()
+        return cleaned.replace("**", "").strip()
+    return ""
+
+
+def _playbook_for_storage(items: list) -> list:
+    trimmed = []
+    for item in items:
+        if not isinstance(item, dict):
+            trimmed.append(item)
+            continue
+        row = dict(item)
+        for key in ("preferred", "fallback", "walk_away"):
+            if key in row:
+                row[key] = _position_heading(row.get(key) or "")
+        trimmed.append(row)
+    return trimmed
+
+
 def _playbook_detail(plan: dict) -> str:
     families = ", ".join(item["family"] for item in plan["playbook"]) or "no family"
     return f"Matched {families}. Score {plan['score']}, {plan['band']}, tier {plan['tier']}."
@@ -302,6 +329,7 @@ class Store:
         with self._lock, self._connect() as conn:
             rnd = self._latest_round(conn, deal_id)
             plan = json.loads(rnd["plan_json"] or "{}")
+            playbook = _playbook_for_storage(playbook)
             plan["playbook"] = playbook
             plan["playbook_status"] = playbook_status
             now = _now()
@@ -705,6 +733,15 @@ class Store:
 
     def _round_payload(self, conn: sqlite3.Connection, row: sqlite3.Row, *, include_actions: bool) -> dict:
         plan = json.loads(row["plan_json"] or "{}")
+        stored_playbook = plan.get("playbook") or []
+        if stored_playbook:
+            trimmed_playbook = _playbook_for_storage(stored_playbook)
+            if trimmed_playbook != stored_playbook:
+                plan["playbook"] = trimmed_playbook
+                conn.execute(
+                    "UPDATE rounds SET plan_json = ? WHERE id = ?",
+                    (json.dumps(plan), row["id"]),
+                )
         index = int(row["step_index"])
         extracted = bool(plan.get("extracted"))
         playbook_ready = bool(plan.get("playbook_status"))
