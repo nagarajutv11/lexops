@@ -232,11 +232,9 @@ class GeminiEmbedder:
 def default_embedder() -> GeminiEmbedder:
     import os
 
-    from ai.llm import load_env
+    from ai.llm import apply_gemini_keys
 
-    load_env()
-    if os.environ.get("GOOGLE_API_KEY"):
-        os.environ.setdefault("GEMINI_API_KEY", os.environ["GOOGLE_API_KEY"])
+    apply_gemini_keys()
     if not os.environ.get("GOOGLE_API_KEY") and not os.environ.get("GEMINI_API_KEY"):
         raise EmbeddingFailed("Set GOOGLE_API_KEY or GEMINI_API_KEY in .env before embedding.")
     model = os.environ.get("LEXOPS_EMBED_MODEL") or "gemini-embedding-001"

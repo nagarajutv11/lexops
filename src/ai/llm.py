@@ -37,6 +37,17 @@ def load_env(path: Path | None = None) -> None:
         os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
 
 
+def apply_gemini_keys() -> None:
+    """LiteLLM reads GEMINI_API_KEY; LangChain embeddings read GOOGLE_API_KEY."""
+    load_env()
+    google = (os.environ.get("GOOGLE_API_KEY") or "").strip()
+    gemini = (os.environ.get("GEMINI_API_KEY") or "").strip()
+    if google and not gemini:
+        os.environ["GEMINI_API_KEY"] = google
+    elif gemini and not google:
+        os.environ["GOOGLE_API_KEY"] = gemini
+
+
 def control_temperature(model: str) -> float | None:
     """Return 0, or None when this model must keep the provider default.
 
@@ -53,23 +64,42 @@ def control_temperature(model: str) -> float | None:
 def _failure_text(exc: Exception) -> str:
     text = " ".join(str(exc).split()) or exc.__class__.__name__
     text = re.sub(r"AIza[0-9A-Za-z_\-]{8,}", "REDACTED", text)
+    text = re.sub(r"AQ\.[0-9A-Za-z_\-]{8,}", "REDACTED", text)
     if len(text) > 300:
         text = text[:300] + "..."
     return f"The model call failed. {text}"
 
 
-def _is_rate_limit(exc: BaseException) -> bool:
-    """Gemini 429s arrive as litellm.RateLimitError, sometimes wrapped."""
+def _walk_exceptions(exc: BaseException):
     seen: list[BaseException] = []
     current: BaseException | None = exc
     while current is not None and current not in seen:
         seen.append(current)
+        yield current
+        current = current.__cause__ or current.__context__
+
+
+def _is_missing_model(exc: BaseException) -> bool:
+    """New Gemini keys cannot call Gemini 2.5; Google returns 404, not 429."""
+    for current in _walk_exceptions(exc):
+        if current.__class__.__name__ == "NotFoundError":
+            return True
+        text = str(current).lower()
+        if "no longer available" in text or "is not found for api version" in text:
+            return True
+    return False
+
+
+def _is_rate_limit(exc: BaseException) -> bool:
+    """Gemini 429s arrive as litellm.RateLimitError, sometimes wrapped."""
+    if _is_missing_model(exc):
+        return False
+    for current in _walk_exceptions(exc):
         if current.__class__.__name__ == "RateLimitError":
             return True
         text = str(current).lower()
         if "ratelimiterror" in text or "exceeded your current quota" in text:
             return True
-        current = current.__cause__ or current.__context__
     return False
 
 
@@ -100,15 +130,13 @@ def complete(
     A Gemini 429 waits 60 seconds and tries again, up to five times. LiteLLM's
     own immediate retries stay off so a quota error is not hammered.
     """
-    load_env()
-    if os.environ.get("GOOGLE_API_KEY"):
-        os.environ.setdefault("GEMINI_API_KEY", os.environ["GOOGLE_API_KEY"])
+    apply_gemini_keys()
     if not os.environ.get("GOOGLE_API_KEY") and not os.environ.get("GEMINI_API_KEY"):
         raise ModelUnavailable("Set GOOGLE_API_KEY or GEMINI_API_KEY in .env before extracting.")
     if not prepare_client():
         raise ModelUnavailable("Install litellm to call the model.")
     import litellm
-    chosen = model or os.environ.get("LLM_MODEL") or os.environ.get("LEXOPS_MODEL") or "gemini/gemini-flash-latest"
+    chosen = model or os.environ.get("LLM_MODEL") or os.environ.get("LEXOPS_MODEL") or "gemini/gemini-3.5-flash-lite"
     kwargs: dict = {
         "model": chosen,
         "messages": messages,
@@ -126,6 +154,11 @@ def complete(
             response = litellm.completion(**kwargs)
             break
         except Exception as exc:
+            if _is_missing_model(exc):
+                raise ModelUnavailable(
+                    "This Gemini model is not available for this API key. "
+                    "Set LLM_MODEL=gemini/gemini-3.5-flash-lite in .env and restart."
+                ) from exc
             if _is_rate_limit(exc) and attempt < _RATE_LIMIT_RETRIES:
                 detail = (
                     f"Gemini quota exceeded. Waiting {_RATE_LIMIT_WAIT_SECONDS} seconds, "
