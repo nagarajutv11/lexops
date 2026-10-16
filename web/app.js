@@ -675,13 +675,8 @@ function positionRow(label, text) {
   `).join("");
 }
 
-function workHtml(deal, round) {
+function playbookHtml(round) {
   return `
-    <section class="card panel">
-      <h2>Submitted text</h2>
-      <div class="submitted">${esc(round.contract_text)}</div>
-    </section>
-    ${extractionHtml(round)}
     <section class="card panel">
       <h2>Playbook</h2>
       ${round.playbook.length ? round.playbook.map((item) => `
@@ -694,6 +689,16 @@ function workHtml(deal, round) {
         </div>
       `).join("") : `<p class="quiet">${round.playbook_status === "not_in_playbook" ? "Not in the playbook." : "Waiting for the playbook match."}</p>`}
     </section>
+  `;
+}
+
+function workHtml(deal, round) {
+  return `
+    <section class="card panel">
+      <h2>Submitted text</h2>
+      <div class="submitted">${esc(round.contract_text)}</div>
+    </section>
+    ${extractionHtml(round)}
     ${activityHtml(deal)}
   `;
 }
@@ -760,6 +765,7 @@ function decisionHtml(deal, round) {
       <div class="field"><span>Tier</span><div>${round.tier ? esc("Tier " + round.tier) : "—"}</div></div>
       <div class="field"><span>Route</span><div>${esc(round.route_reason || "The route is still running.")}</div></div>
     </section>
+    ${playbookHtml(round)}
     <section class="card panel">
       <h2>This customer · ${esc(deal.counterparty_id)}</h2>
       ${deal.memory.posture ? `<p>${esc(deal.memory.posture)}</p>` : ""}
